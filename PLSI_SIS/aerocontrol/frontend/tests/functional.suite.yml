@@ -1,0 +1,17 @@
+suite_namespace: frontend\tests\functional
+actor: FunctionalTester
+modules:
+    enabled:
+        - Filesystem
+        - Yii2
+        - Asserts
+        - Db:
+                dsn: 'mysql:host=localhost;dbname=aerocontrol_tests'
+                user: 'root'
+                password: ''
+                cleanup: true
+                dump:
+                    - '../common/tests/_data/dump_db.sql'
+                    - '../common/tests/_data/dump_data.sql'
+                    - '../common/tests/_data/dump_migrations.sql'
+                populate: true
